@@ -15,6 +15,9 @@ final class RomanNumerals extends TestCase
 
     public function say($numero)
     {
-        return "I";
+        if($numero == 1) {
+            return "I";
+        }
+        return "II";
     }
 }
