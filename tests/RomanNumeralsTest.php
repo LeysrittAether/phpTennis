@@ -77,4 +77,19 @@ final class RomanNumeralsTest extends TestCase
         // Comprobación
         $this->assertEquals("V", $romanNumerals->say(5));
     }
+
+
+    /**
+     * @test
+     */
+    public function si_es_6_devuelve_VI()
+    {
+        // Preparación
+        $romanNumerals = new RomanNumerals();
+
+        // Ejecución
+
+        // Comprobación
+        $this->assertEquals("VI", $romanNumerals->say(6));
+    }
 }

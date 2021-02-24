@@ -13,16 +13,19 @@ final class RomanNumerals extends TestCase
 
     }
 
+    private function I($numero) {
+        $salida = "";
+        while($numero > 0) {
+            $salida .= "I";
+            $numero -= 1;
+        }
+        return $salida;
+    }
+
     public function say($numero)
     {
-        if($numero == 1) {
-            return "I";
-        }
-        if($numero == 2) {
-            return "II";
-        }
-        if($numero == 3) {
-            return "III";
+        if($numero < 4) {
+            return $this->I($numero);
         }
         if($numero == 4) {
             return "IV";
