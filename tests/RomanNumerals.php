@@ -22,6 +22,15 @@ final class RomanNumerals extends TestCase
         return $salida;
     }
 
+    private function V($numero) {
+        $salida = "";
+        if($numero > 4) {
+            $salida .= "V";
+            $salida .= $this->I($numero - 5);
+        }
+        return $salida;
+    }
+
     public function say($numero)
     {
         if($numero < 4) {
@@ -30,6 +39,8 @@ final class RomanNumerals extends TestCase
         if($numero == 4) {
             return "IV";
         }
-        return "V";
+        if($numero < 9) {
+            return $this->V($numero);
+        }
     }
 }
