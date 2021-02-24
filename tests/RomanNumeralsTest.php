@@ -35,4 +35,18 @@ final class RomanNumeralsTest extends TestCase
         // Comprobación
         $this->assertEquals("II", $romanNumerals->say(2));
     }
+
+    /**
+     * @test
+     */
+    public function si_es_3_devuelve_III()
+    {
+        // Preparación
+        $romanNumerals = new RomanNumerals();
+
+        // Ejecución
+
+        // Comprobación
+        $this->assertEquals("III", $romanNumerals->say(3));
+    }
 }
