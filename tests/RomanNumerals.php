@@ -24,6 +24,9 @@ final class RomanNumerals extends TestCase
         if($numero == 3) {
             return "III";
         }
-        return "IV";
+        if($numero == 4) {
+            return "IV";
+        }
+        return "V";
     }
 }
