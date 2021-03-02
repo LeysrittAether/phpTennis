@@ -27,7 +27,7 @@ final class RomanNumeralsTest extends TestCase
     /**
      * @test
      */
-    public function si_es_2_devuelve_II()
+    public function si_es_2_o_3_devuelve_II_o_III()
     {
         // Preparación
         $romanNumerals = new RomanNumerals();
@@ -36,19 +36,6 @@ final class RomanNumeralsTest extends TestCase
 
         // Comprobación
         $this->assertEquals("II", $romanNumerals->say(2));
-    }
-
-    /**
-     * @test
-     */
-    public function si_es_3_devuelve_III()
-    {
-        // Preparación
-        $romanNumerals = new RomanNumerals();
-
-        // Ejecución
-
-        // Comprobación
         $this->assertEquals("III", $romanNumerals->say(3));
     }
 
@@ -69,7 +56,7 @@ final class RomanNumeralsTest extends TestCase
     /**
      * @test
      */
-    public function si_es_6_devuelve_VI()
+    public function si_es_6_o_7_devuelve_VI_o_VII()
     {
         // Preparación
         $romanNumerals = new RomanNumerals();
@@ -78,19 +65,6 @@ final class RomanNumeralsTest extends TestCase
 
         // Comprobación
         $this->assertEquals("VI", $romanNumerals->say(6));
-    }
-
-    /**
-     * @test
-     */
-    public function si_es_7_devuelve_VII()
-    {
-        // Preparación
-        $romanNumerals = new RomanNumerals();
-
-        // Ejecución
-
-        // Comprobación
         $this->assertEquals("VII", $romanNumerals->say(7));
     }
 
