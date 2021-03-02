@@ -197,6 +197,20 @@ final class RomanNumeralsTest extends TestCase
     /**
      * @test
      */
+    public function si_es_99_devuelve_IC()
+    {
+        // Preparación
+        $romanNumerals = new RomanNumerals();
+
+        // Ejecución
+
+        // Comprobación
+        $this->assertEquals("IC", $romanNumerals->say(99));
+    }
+
+    /**
+     * @test
+     */
     public function si_es_149_devuelve_CIL()
     {
         // Preparación
