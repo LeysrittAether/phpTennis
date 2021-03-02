@@ -13,78 +13,78 @@ final class RomanNumerals extends TestCase
 
     }
 
-    private function add_I($numero) {
-        $salida = "";
-        while($numero > 0) {
-            $salida .= "I";
-            $numero -= 1;
+    private function add_I($numero_entrada) {
+        $numero_romano_salida = "";
+        while($numero_entrada > 0) {
+            $numero_romano_salida .= "I";
+            $numero_entrada -= 1;
         }
-        return $salida;
+        return $numero_romano_salida;
     }
 
-    private function add_V($numero) {
-        $salida = "";
-        if($numero > 4) {
-            $salida .= "V";
-            $salida .= $this->say($numero - 5);
+    private function add_V($numero_entrada) {
+        $numero_romano_salida = "";
+        if($numero_entrada > 4) {
+            $numero_romano_salida .= "V";
+            $numero_romano_salida .= $this->say($numero_entrada - 5);
         }
-        return $salida;
+        return $numero_romano_salida;
     }
 
-    private function add_X($numero) {
-        $salida = "";
-        while($numero > 9) {
-            $salida .= "X";
-            $numero -= 10;
+    private function add_X($numero_entrada) {
+        $numero_romano_salida = "";
+        while($numero_entrada > 9) {
+            $numero_romano_salida .= "X";
+            $numero_entrada -= 10;
         }
-        $salida .= $this->say($numero);
-        return $salida;
+        $numero_romano_salida .= $this->say($numero_entrada);
+        return $numero_romano_salida;
     }
 
-    private function add_L($numero) {
-        $salida = "";
-        while($numero > 39) {
-            $salida .= "L";
-            $numero -= 50;
+    private function add_L($numero_entrada) {
+        $numero_romano_salida = "";
+        while($numero_entrada > 39) {
+            $numero_romano_salida .= "L";
+            $numero_entrada -= 50;
         }
-        $salida .= $this->say($numero);
-        return $salida;
+        $numero_romano_salida .= $this->say($numero_entrada);
+        return $numero_romano_salida;
     }
 
-    public function say($numero)
+    public function say($numero_entrada)
     {
-        if($numero < 4) {
-            return $this->add_I($numero);
+        if($numero_entrada < 4) {
+            return $this->add_I($numero_entrada);
         }
-        if($numero == 4) {
-            $resultado = $this->add_I(1);
-            $resultado .= $this->add_V(5);
-            return $resultado;
+        if($numero_entrada == 4) {
+            $numero_romano_salida = $this->add_I(1);
+            $numero_romano_salida .= $this->add_V(5);
+            return $numero_romano_salida;
         }
-        if($numero < 9) {
-            return $this->add_V($numero);
+        if($numero_entrada < 9) {
+            return $this->add_V($numero_entrada);
         }
-        if($numero == 9) {
-            $resultado = $this->add_I(1);
-            $resultado .= $this->add_X(10);
-            return $resultado;
+        if($numero_entrada == 9) {
+            $numero_romano_salida = $this->add_I(1);
+            $numero_romano_salida .= $this->add_X(10);
+            return $numero_romano_salida;
         }
-        if($numero < 40) {
-            return $this->add_X($numero);
+        if($numero_entrada < 40) {
+            return $this->add_X($numero_entrada);
         }
-        if($numero < 49) {
-            $resultado = $this->add_X(10);
-            $resultado .= $this->add_L(50);
-            $resultado .= $this->add_X($numero - 40);
-            return $resultado;
+        if($numero_entrada < 49) {
+            $numero_romano_salida = $this->add_X(10);
+            $numero_romano_salida .= $this->add_L(50);
+            $numero_romano_salida .= $this->add_X($numero_entrada - 40);
+            return $numero_romano_salida;
         }
-        if($numero == 49) {
-            $resultado = $this->add_I(1);
-            $resultado .= $this->add_L(50);
-            return $resultado;
+        if($numero_entrada == 49) {
+            $numero_romano_salida = $this->add_I(1);
+            $numero_romano_salida .= $this->add_L(50);
+            return $numero_romano_salida;
         }
-        if($numero < 90) {
-            return $this->add_L($numero);
+        if($numero_entrada < 90) {
+            return $this->add_L($numero_entrada);
         }
     }
 }
