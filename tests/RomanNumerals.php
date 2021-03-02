@@ -78,6 +78,11 @@ final class RomanNumerals extends TestCase
             $resultado .= $this->add_X($numero - 40);
             return $resultado;
         }
+        if($numero == 49) {
+            $resultado = $this->add_I(1);
+            $resultado .= $this->add_L(50);
+            return $resultado;
+        }
         if($numero < 90) {
             return $this->add_L($numero);
         }
