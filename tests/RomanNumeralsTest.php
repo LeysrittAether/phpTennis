@@ -11,7 +11,7 @@ final class RomanNumeralsTest extends TestCase
     /**
      * @test
      */
-    public function si_es_1_devuelve_I()
+    public function si_es_del_1_5_o_10_devuelve_I_V_o_X()
     {
         // Preparación
         $romanNumerals = new RomanNumerals();
@@ -20,6 +20,8 @@ final class RomanNumeralsTest extends TestCase
 
         // Comprobación
         $this->assertEquals("I", $romanNumerals->say(1));
+        $this->assertEquals("V", $romanNumerals->say(5));
+        $this->assertEquals("X", $romanNumerals->say(10));
     }
 
     /**
@@ -63,21 +65,6 @@ final class RomanNumeralsTest extends TestCase
         // Comprobación
         $this->assertEquals("IV", $romanNumerals->say(4));
     }
-
-    /**
-     * @test
-     */
-    public function si_es_5_devuelve_V()
-    {
-        // Preparación
-        $romanNumerals = new RomanNumerals();
-
-        // Ejecución
-
-        // Comprobación
-        $this->assertEquals("V", $romanNumerals->say(5));
-    }
-
 
     /**
      * @test

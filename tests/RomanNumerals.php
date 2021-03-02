@@ -26,7 +26,7 @@ final class RomanNumerals extends TestCase
         $salida = "";
         if($numero > 4) {
             $salida .= "V";
-            $salida .= $this->add_I($numero - 5);
+            $salida .= $this->say($numero - 5);
         }
         return $salida;
     }
@@ -37,7 +37,7 @@ final class RomanNumerals extends TestCase
             $salida .= "X";
             $numero -= 10;
         }
-        $salida .= $this->add_V($numero);
+        $salida .= $this->say($numero);
         return $salida;
     }
 
