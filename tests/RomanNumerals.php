@@ -13,7 +13,7 @@ final class RomanNumerals extends TestCase
 
     }
 
-    private function I($numero) {
+    private function add_I($numero) {
         $salida = "";
         while($numero > 0) {
             $salida .= "I";
@@ -22,11 +22,11 @@ final class RomanNumerals extends TestCase
         return $salida;
     }
 
-    private function V($numero) {
+    private function add_V($numero) {
         $salida = "";
         if($numero > 4) {
             $salida .= "V";
-            $salida .= $this->I($numero - 5);
+            $salida .= $this->add_I($numero - 5);
         }
         return $salida;
     }
@@ -34,13 +34,13 @@ final class RomanNumerals extends TestCase
     public function say($numero)
     {
         if($numero < 4) {
-            return $this->I($numero);
+            return $this->add_I($numero);
         }
         if($numero == 4) {
             return "IV";
         }
         if($numero < 9) {
-            return $this->V($numero);
+            return $this->add_V($numero);
         }
     }
 }
