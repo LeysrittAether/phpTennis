@@ -33,10 +33,11 @@ final class RomanNumerals extends TestCase
 
     private function add_X($numero) {
         $salida = "";
-        if($numero > 9) {
+        while($numero > 9) {
             $salida .= "X";
-            $salida .= $this->add_V($numero - 10);
+            $numero -= 10;
         }
+        $salida .= $this->add_V($numero);
         return $salida;
     }
 
