@@ -155,6 +155,20 @@ final class RomanNumeralsTest extends TestCase
     /**
      * @test
      */
+    public function si_es_49_devuelve_IL()
+    {
+        // Preparación
+        $romanNumerals = new RomanNumerals();
+
+        // Ejecución
+
+        // Comprobación
+        $this->assertEquals("IL", $romanNumerals->say(49));
+    }
+
+    /**
+     * @test
+     */
     public function si_es_57_devuelve_LVII()
     {
         // Preparación
