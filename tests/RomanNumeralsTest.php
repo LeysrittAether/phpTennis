@@ -113,6 +113,20 @@ final class RomanNumeralsTest extends TestCase
     /**
      * @test
      */
+    public function si_es_24_devuelve_XXIV()
+    {
+        // Preparación
+        $romanNumerals = new RomanNumerals();
+
+        // Ejecución
+
+        // Comprobación
+        $this->assertEquals("XXIV", $romanNumerals->say(24));
+    }
+
+    /**
+     * @test
+     */
     public function si_es_39_devuelve_XXXIX()
     {
         // Preparación
