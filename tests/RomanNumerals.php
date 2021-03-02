@@ -95,7 +95,7 @@ final class RomanNumerals extends TestCase
         if($numero_entrada < 90) {
             return $this->add_L($numero_entrada);
         }
-        if($numero_entrada < 400) {
+        if($numero_entrada < 151) {
             return $this->add_C($numero_entrada);
         }
     }

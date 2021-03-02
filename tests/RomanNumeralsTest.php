@@ -183,7 +183,7 @@ final class RomanNumeralsTest extends TestCase
     /**
      * @test
      */
-    public function si_es_254_devuelve_CCLIV()
+    public function si_es_150_devuelve_CL()
     {
         // Preparación
         $romanNumerals = new RomanNumerals();
@@ -191,6 +191,6 @@ final class RomanNumeralsTest extends TestCase
         // Ejecución
 
         // Comprobación
-        $this->assertEquals("CCLIV", $romanNumerals->say(254));
+        $this->assertEquals("CL", $romanNumerals->say(150));
     }
 }
