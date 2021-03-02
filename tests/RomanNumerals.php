@@ -43,9 +43,18 @@ final class RomanNumerals extends TestCase
 
     private function add_L($numero_entrada) {
         $numero_romano_salida = "";
-        while($numero_entrada > 39) {
+        if($numero_entrada > 49) {
             $numero_romano_salida .= "L";
-            $numero_entrada -= 50;
+            $numero_romano_salida .= $this->say($numero_entrada - 50);
+        }
+        return $numero_romano_salida;
+    }
+
+    private function add_C($numero_entrada) {
+        $numero_romano_salida = "";
+        while($numero_entrada > 99) {
+            $numero_romano_salida .= "C";
+            $numero_entrada -= 100;
         }
         $numero_romano_salida .= $this->say($numero_entrada);
         return $numero_romano_salida;
@@ -85,6 +94,9 @@ final class RomanNumerals extends TestCase
         }
         if($numero_entrada < 90) {
             return $this->add_L($numero_entrada);
+        }
+        if($numero_entrada < 400) {
+            return $this->add_C($numero_entrada);
         }
     }
 }

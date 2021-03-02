@@ -179,4 +179,18 @@ final class RomanNumeralsTest extends TestCase
         // Comprobación
         $this->assertEquals("LVII", $romanNumerals->say(57));
     }
+
+    /**
+     * @test
+     */
+    public function si_es_254_devuelve_CCLIV()
+    {
+        // Preparación
+        $romanNumerals = new RomanNumerals();
+
+        // Ejecución
+
+        // Comprobación
+        $this->assertEquals("CCLIV", $romanNumerals->say(254));
+    }
 }
