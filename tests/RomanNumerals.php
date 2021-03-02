@@ -58,5 +58,8 @@ final class RomanNumerals extends TestCase
             $resultado .= $this->add_X(10);
             return "$resultado";
         }
+        if($numero < 49) {
+            return $this->add_X($numero);
+        }
     }
 }
