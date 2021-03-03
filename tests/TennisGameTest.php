@@ -18,4 +18,17 @@ final class TennisGameTest extends TestCase
         $this->assertEquals("Love all", $tennisGame->getScore());
     }
 
+
+    /**
+     * @test
+     */
+    public function si_van_0_15_devuelve_love_fifteen()
+    {
+        $tennisGame = new TennisGame("player1", "player2");
+
+        $tennisGame->wonPoint("player2");
+
+        $this->assertEquals("Love - Fifteen", $tennisGame->getScore());
+    }
+
 }

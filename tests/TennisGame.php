@@ -10,6 +10,8 @@ final class TennisGame extends TestCase
 {
     protected string $player1Name;
     protected string $player2Name;
+    private int $player1Score = 0;
+    private int $player2Score = 0;
 
     public function __construct($player1Name, $player2Name)
     {
@@ -17,7 +19,26 @@ final class TennisGame extends TestCase
         $this->player2Name = $player2Name;
     }
 
+    public function wonPoint($wonPointPlayer) {
+        if($this->player2Name == $wonPointPlayer) {
+            if ($this->player2Score == 0) {
+                $this->player2Score = 15;
+            }
+        }
+    }
+
     public function getScore() {
-        return "Love all";
+        $returningScore = "";
+        if($this->player1Score == 0) {
+            $returningScore .= "Love ";
+            if($this->player2Score == 0) {
+                $returningScore .= "all";
+                return $returningScore;
+            }
+            if($this->player2Score == 15) {
+                $returningScore .= "- Fifteen";
+                return $returningScore;
+            }
+        }
     }
 }
