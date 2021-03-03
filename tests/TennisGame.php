@@ -27,6 +27,9 @@ final class TennisGame extends TestCase
             else if($this->player2Score == 15) {
                 $this->player2Score = 30;
             }
+            else if($this->player2Score == 30) {
+                $this->player2Score = 40;
+            }
         }
     }
 
@@ -44,6 +47,10 @@ final class TennisGame extends TestCase
             }
             if($this->player2Score == 30) {
                 $returningScore .= "- Thirty";
+                return $returningScore;
+            }
+            if($this->player2Score == 40) {
+                $returningScore .= "- Forty";
                 return $returningScore;
             }
         }
