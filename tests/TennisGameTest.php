@@ -57,4 +57,19 @@ final class TennisGameTest extends TestCase
         $this->assertEquals("Love - Forty", $tennisGame->getScore());
     }
 
+    /**
+     * @test
+     */
+    public function si_gana_jugador2_devuelve_win_player2()
+    {
+        $tennisGame = new TennisGame("player1", "player2");
+
+        $tennisGame->wonPoint("player2");
+        $tennisGame->wonPoint("player2");
+        $tennisGame->wonPoint("player2");
+        $tennisGame->wonPoint("player2");
+
+        $this->assertEquals("Win player2", $tennisGame->getScore());
+    }
+
 }

@@ -30,29 +30,40 @@ final class TennisGame extends TestCase
             else if($this->player2Score == 30) {
                 $this->player2Score = 40;
             }
+            else if($this->player2Score == 40) {
+                $this->player2Score = 1;
+            }
         }
     }
 
     public function getScore() {
         $returningScore = "";
-        if($this->player1Score == 0) {
-            $returningScore .= "Love ";
-            if($this->player2Score == 0) {
-                $returningScore .= "all";
-                return $returningScore;
+        if($this->player1Score != 1 && $this->player2Score != 1) {
+            if($this->player1Score == 0) {
+                $returningScore .= "Love ";
+                if ($this->player2Score == 0) {
+                    $returningScore .= "all";
+                    return $returningScore;
+                }
+                if ($this->player2Score == 15) {
+                    $returningScore .= "- Fifteen";
+                    return $returningScore;
+                }
+                if ($this->player2Score == 30) {
+                    $returningScore .= "- Thirty";
+                    return $returningScore;
+                }
+                if ($this->player2Score == 40) {
+                    $returningScore .= "- Forty";
+                    return $returningScore;
+                }
             }
-            if($this->player2Score == 15) {
-                $returningScore .= "- Fifteen";
-                return $returningScore;
-            }
-            if($this->player2Score == 30) {
-                $returningScore .= "- Thirty";
-                return $returningScore;
-            }
-            if($this->player2Score == 40) {
-                $returningScore .= "- Forty";
-                return $returningScore;
-            }
+        }
+        else if($this->player1Score == 1) {
+            return "Win" . $this->player1Name;
+        }
+        else {
+            return "Win " . $this->player2Name;
         }
     }
 }
