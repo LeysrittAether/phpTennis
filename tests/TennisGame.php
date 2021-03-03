@@ -21,8 +21,11 @@ final class TennisGame extends TestCase
 
     public function wonPoint($wonPointPlayer) {
         if($this->player2Name == $wonPointPlayer) {
-            if ($this->player2Score == 0) {
+            if($this->player2Score == 0) {
                 $this->player2Score = 15;
+            }
+            else if($this->player2Score == 15) {
+                $this->player2Score = 30;
             }
         }
     }
@@ -37,6 +40,10 @@ final class TennisGame extends TestCase
             }
             if($this->player2Score == 15) {
                 $returningScore .= "- Fifteen";
+                return $returningScore;
+            }
+            if($this->player2Score == 30) {
+                $returningScore .= "- Thirty";
                 return $returningScore;
             }
         }
