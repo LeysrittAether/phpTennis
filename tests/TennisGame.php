@@ -21,7 +21,10 @@ final class TennisGame extends TestCase
     }
 
     public function wonPoint($wonPointPlayer) {
-        if($this->player2Name == $wonPointPlayer) {
+        if($this->player1Name == $wonPointPlayer) {
+            $this->player1Score++;
+        }
+        else if($this->player2Name == $wonPointPlayer) {
             $this->player2Score++;
         }
     }
@@ -31,23 +34,26 @@ final class TennisGame extends TestCase
         if($this->tennisScores[$this->player1Score] != 1 && $this->tennisScores[$this->player2Score] != 1) {
             if($this->player1Score == 0) {
                 $returningScore .= "Love ";
-                if ($this->player2Score == 0) {
-                    $returningScore .= "all";
-                    return $returningScore;
-                }
-                if ($this->player2Score == 1) {
-                    $returningScore .= "- Fifteen";
-                    return $returningScore;
-                }
-                if ($this->player2Score == 2) {
-                    $returningScore .= "- Thirty";
-                    return $returningScore;
-                }
-                if ($this->player2Score == 3) {
-                    $returningScore .= "- Forty";
-                    return $returningScore;
-                }
+            } else if($this->player1Score == 1) {
+                $returningScore .= "Fifteen ";
             }
+
+            if($this->player1Score == $this->player2Score) {
+                $returningScore .= "all";
+                return $returningScore;
+            }
+
+            if($this->player2Score == 0) {
+                $returningScore .= "- Love";
+            } else if($this->player2Score == 1) {
+                $returningScore .= "- Fifteen";
+                return $returningScore;
+            } else if($this->player2Score == 2) {
+                $returningScore .= "- Thirty";
+            } else if($this->player2Score == 3) {
+                    $returningScore .= "- Forty";
+            }
+            return $returningScore;
         }
         else if($this->player1Score == 4) {
             return "Win" . $this->player1Name;
