@@ -20,8 +20,8 @@ final class TennisGame extends TestCase
         $this->player2Name = $player2Name;
     }
 
-    public function wonPoint($wonPointPlayer) {
-        if($this->player1Name == $wonPointPlayer) {
+    public function wonPoint($pointWinner) {
+        if($this->player1Name == $pointWinner) {
             if($this->player1Score == 3) {
                 if($this->player2Score == 3) {
                     $this->player1Score++;
@@ -37,7 +37,7 @@ final class TennisGame extends TestCase
                 $this->player1Score++;
             }
         }
-        else if($this->player2Name == $wonPointPlayer) {
+        else if($this->player2Name == $pointWinner) {
             if($this->player2Score == 3) {
                 if($this->player1Score == 3) {
                     $this->player2Score++;
