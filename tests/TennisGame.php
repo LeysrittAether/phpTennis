@@ -63,6 +63,9 @@ final class TennisGame extends TestCase
         else if($this->player1Score == 4) {
             return $this->tennisScores[$this->player1Score] . " " . $this->player1Name;
         }
+        else if($this->player2Score == 4) {
+            return $this->tennisScores[$this->player2Score] . " " . $this->player2Name;
+        }
         else {
             $returningScore = $this->tennisScores[$this->player1Score];
             if($this->player1Score == $this->player2Score) {
