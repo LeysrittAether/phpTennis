@@ -22,14 +22,15 @@ final class TennisGame extends TestCase
 
     public function wonPoint($wonPointPlayer) {
         if($this->player1Name == $wonPointPlayer) {
-            if ($this->player1Score == 3) {
-                if ($this->player2Score != 3) {
+            if($this->player1Score == 3) {
+                if($this->player2Score == 3) {
                     $this->player1Score++;
-                    $this->player1Score++;
-                } else if ($this->player2Score == 3) {
-                    $this->player1Score++;
-                } else if ($this->player2Score == 4) {
+                } else if($this->player2Score == 4) {
                     $this->player2Score--;
+                }
+                else {
+                    $this->player1Score++;
+                    $this->player1Score++;
                 }
             }
             else {
@@ -37,14 +38,15 @@ final class TennisGame extends TestCase
             }
         }
         else if($this->player2Name == $wonPointPlayer) {
-            if ($this->player2Score == 3) {
-                if ($this->player1Score != 3) {
+            if($this->player2Score == 3) {
+                if($this->player1Score == 3) {
                     $this->player2Score++;
-                    $this->player2Score++;
-                } else if ($this->player1Score == 3) {
-                    $this->player2Score++;
-                } else if ($this->player1Score == 4) {
+                } else if($this->player1Score == 4) {
                     $this->player1Score--;
+                }
+                else {
+                    $this->player2Score++;
+                    $this->player2Score++;
                 }
             }
             else {

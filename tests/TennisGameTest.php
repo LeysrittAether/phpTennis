@@ -149,4 +149,23 @@ final class TennisGameTest extends TestCase
 
         $this->assertEquals("Advantage player2", $tennisGame->getScore());
     }
+
+    /**
+     * @test
+     */
+    public function si_tenia_ventaja_jugador1_pero_ahora_van_iguales_devuelve_forty_all()
+    {
+        $tennisGame = new TennisGame("player1", "player2");
+
+        $tennisGame->wonPoint("player1");
+        $tennisGame->wonPoint("player2");
+        $tennisGame->wonPoint("player1");
+        $tennisGame->wonPoint("player2");
+        $tennisGame->wonPoint("player1");
+        $tennisGame->wonPoint("player2");
+        $tennisGame->wonPoint("player1");
+        $tennisGame->wonPoint("player2");
+
+        $this->assertEquals("Forty all", $tennisGame->getScore());
+    }
 }
